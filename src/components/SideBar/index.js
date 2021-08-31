@@ -1,10 +1,14 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom'
 import {
   Bar,
-  Item
+  Head,
+  LogoImage,
+  BarScroll,
+  Item,
+  Icon,
+  Footer
 } from './style'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faChartBar,
   faDatabase,
@@ -12,8 +16,10 @@ import {
   faShoppingCart,
   faUser,
   faReceipt,
-  faCog
+  faCog,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons'
+import Logo from '../../assets/images/logo.png'
 
 const SideBar = () => {
   const [menu] = useState([{
@@ -46,23 +52,51 @@ const SideBar = () => {
     icon: faCog
   }])
 
+  const location = useLocation()
+
   return (
     <Bar>
-      {
-        menu.map((item, index) => {
-          return (
-            <Link
-              key={`${item.to}${index}`}
-              to={item.to}
-            >
-              <Item>
-                <FontAwesomeIcon icon={item.icon} />
+      <Head>
+        <Link
+          to="/"
+        >
+          <LogoImage
+            src={Logo}
+            alt="Logo"
+          />
+        </Link>
+      </Head>
+
+      <BarScroll>
+        {
+          menu.map((item, index) => {
+            return (
+              <Item
+                exact
+                key={`${item.to}${index}`}
+                to={item.to}
+                activeClassName='is-active'
+              >
+                <Icon
+                  icon={item.icon}
+                  active={`${location?.pathname === item.to}`}
+                />
                 {item.title}
               </Item>
-            </Link>
-          )
-        })
-      }
+            )
+          })
+        }
+      </BarScroll>
+
+      <Footer>
+        <Item
+          exact
+          to='/login'
+        >
+          <Icon icon={faSignOutAlt} />
+          Sair
+        </Item>
+      </Footer>
     </Bar>
   )
 }
