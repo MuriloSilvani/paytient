@@ -26,7 +26,7 @@ const SideBar = () => {
     icon: faDatabase
   }, {
     to: '/campaingns',
-    title: 'Campanas',
+    title: 'Campanhas',
     icon: faBullseye
   }, {
     to: '/sales',
