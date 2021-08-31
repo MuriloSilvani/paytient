@@ -1,7 +1,9 @@
-export default function Leads() {
+const Campaingns = () => {
   return (
     <div>
       Campaingns
     </div>
   )
 }
+
+export default Campaingns

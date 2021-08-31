@@ -20,7 +20,7 @@ const Container = styled.div`
   position: relative;
 `
 
-export default function Routes() {
+const Routes = () => {
   return (
     <BrowserRouter>
       <Container>
@@ -39,3 +39,5 @@ export default function Routes() {
     </BrowserRouter>
   )
 }
+
+export default Routes

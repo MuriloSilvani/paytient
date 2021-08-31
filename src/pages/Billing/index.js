@@ -1,7 +1,9 @@
-export default function Leads() {
+const Billing = () => {
   return (
     <div>
       Billing
     </div>
   )
 }
+
+export default Billing

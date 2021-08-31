@@ -1,7 +1,9 @@
-export default function Leads() {
+const Leads = () => {
   return (
     <div>
       Leads
     </div>
   )
 }
+
+export default Leads
