@@ -1,19 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SideBar from '../components/SideBar'
+import { BrowserRouter } from 'react-router-dom';
 
-import Dashboard from '../pages/Dashboard/index';
-import Leads from '../pages/Leads/index';
-import Campaingns from '../pages/Campaingns/index';
-import Sales from '../pages/Sales/index';
-import Clients from '../pages/Clients/index';
-import Billing from '../pages/Billing/index';
-import Configurations from '../pages/Configurations/index';
+import SideBar from '../components/SideBar'
+import TopBar from '../components/TopBar'
+import Frame from '../components/Frame'
 
 import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
+  flex-direction: ${props => props.direction || 'row'};
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -26,15 +22,13 @@ const Routes = () => {
       <Container>
         <SideBar />
 
-        <Switch>
-          <Route path='/' exact component={Dashboard} />
-          <Route path='/leads' component={Leads} />
-          <Route path='/campaingns' component={Campaingns} />
-          <Route path='/sales' component={Sales} />
-          <Route path='/clients' component={Clients} />
-          <Route path='/billing' component={Billing} />
-          <Route path='/configurations' component={Configurations} />
-        </Switch>
+        <Container
+          direction="column"
+        >
+          <TopBar />
+          <Frame />
+        </Container>
+
       </Container>
     </BrowserRouter>
   )

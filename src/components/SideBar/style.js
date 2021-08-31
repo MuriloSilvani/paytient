@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Bar = styled.section`
-  border-right: 1px solid #b3b3b340;
+  border-right: 1px solid #d2d2d240;
   display: flex;
   flex-direction: column;
   width: 240px;
@@ -20,7 +20,7 @@ const LogoImage = styled.img`
   max-heith: 40px;
   margin: 0 auto;
 `
-  
+
 const BarScroll = styled.section`
   display: flex;
   flex: 1;
@@ -40,7 +40,7 @@ const Item = styled(NavLink)`
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
-  color: #b3b3b3;
+  color: #d2d2d2;
   transition-duration: 0.3s;
   font-size: 0.94rem;
   font-weight: 600;
@@ -48,14 +48,14 @@ const Item = styled(NavLink)`
     opacity: 0.75;
   }
   &.is-active {
-    color: #3d3d3d;
+    color: #5f5f5f;
   }
   `;
   
   const Icon = styled(FontAwesomeIcon)`
   font-size: 1.1rem;
   transition-duration: 0.3s;
-  color: ${props => props.active === 'true' ? '#0f0' : '#b3b3b3'}
+  color: ${props => props.active === 'true' ? '#0f0' : '#d2d2d2'}
 `
 
 const Footer = styled.div`
