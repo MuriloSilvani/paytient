@@ -6,7 +6,6 @@ const Bar = styled.section`
   border-right: 1px solid #d2d2d240;
   display: flex;
   flex-direction: column;
-  width: 240px;
   gap: 0.8rem;
 `
 
@@ -28,7 +27,7 @@ const BarScroll = styled.section`
   gap: 0.8rem;
   heigth: 100vh;
   overflow: auto;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.4rem 0.4rem 1rem;
 `;
 
 const Item = styled(NavLink)`
@@ -50,7 +49,7 @@ const Item = styled(NavLink)`
   &.is-active {
     color: #5f5f5f;
   }
-  `;
+`;
   
   const Icon = styled(FontAwesomeIcon)`
   font-size: 1.1rem;
