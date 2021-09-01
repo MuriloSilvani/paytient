@@ -12,10 +12,11 @@ import {
   faBell
 } from '@fortawesome/free-solid-svg-icons'
 
-const TopBar = () => {
+const TopBar = ({ swithcMenu }) => {
   return (
     <Bar>
       <MenuIcon
+        onClick={swithcMenu}
         icon={faBars}
       />
 

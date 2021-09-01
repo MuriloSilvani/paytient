@@ -13,10 +13,22 @@ const Head = styled.div`
   padding: 1.4rem 0.8rem 0.2rem 0.8rem;
 `
 
+const LogoImageView = styled(NavLink)`
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  transition-duration: 0.3s;
+  position: relative;
+  overflow: hidden;
+  max-width: 220px;
+  &.hidden {
+    max-width: 30px;
+  }
+`
+
 const LogoImage = styled.img`
   display: block;
-  max-width: 120px;
-  max-heith: 40px;
+  height: 100%;
   margin: 0 auto;
 `
 
@@ -27,7 +39,7 @@ const BarScroll = styled.section`
   gap: 0.8rem;
   heigth: 100vh;
   overflow: auto;
-  padding: 0.4rem 1.4rem 0.4rem 1rem;
+  padding: 0.4rem 1rem;
 `;
 
 const Item = styled(NavLink)`
@@ -35,7 +47,6 @@ const Item = styled(NavLink)`
   flex-direction: row;
   gap: 1.4rem;
   align-items: center;
-  padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
@@ -49,12 +60,27 @@ const Item = styled(NavLink)`
   &.is-active {
     color: #5f5f5f;
   }
+  padding: 0.5rem 1rem;
+  &.hidden {
+    gap: 0rem;
+    padding: 0.5rem .5rem;
+  }
 `;
   
-  const Icon = styled(FontAwesomeIcon)`
+const Icon = styled(FontAwesomeIcon)`
   font-size: 1.1rem;
   transition-duration: 0.3s;
+  text-align: center;
   color: ${props => props.active === 'true' ? '#0f0' : '#d2d2d2'}
+`
+
+const ItemText = styled.div`
+  transition-duration: 0.3s;
+  overflow: hidden;
+  max-width: 200px;
+  &.hidden {
+    max-width: 0px;
+  }
 `
 
 const Footer = styled.div`
@@ -64,9 +90,11 @@ const Footer = styled.div`
 export {
   Bar,
   Head,
+  LogoImageView,
   LogoImage,
   BarScroll,
   Item,
   Icon,
+  ItemText,
   Footer
 }

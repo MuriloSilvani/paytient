@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import SideBar from '../components/SideBar'
@@ -17,15 +17,21 @@ const Container = styled.div`
 `
 
 const Routes = () => {
+  const [hiddenMenu, setHiddenMenu] = useState(false)
+
+  const swithcMenu = () => {
+    setHiddenMenu(!hiddenMenu)
+  }
+
   return (
     <BrowserRouter>
       <Container>
-        <SideBar />
+        <SideBar hiddenMenu={hiddenMenu} />
 
         <Container
           direction="column"
         >
-          <TopBar />
+          <TopBar swithcMenu={swithcMenu} />
           <Frame />
         </Container>
 

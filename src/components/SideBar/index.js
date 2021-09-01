@@ -1,70 +1,37 @@
-import { useState } from 'react'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import {
   Bar,
   Head,
+  LogoImageView,
   LogoImage,
   BarScroll,
   Item,
   Icon,
+  ItemText,
   Footer
 } from './style'
 import {
-  faChartBar,
-  faDatabase,
-  faBullseye,
-  faShoppingCart,
-  faUser,
-  faReceipt,
-  faCog,
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons'
-import Logo from '../../assets/images/logo.png'
+import Logo from '../../assets/images/logo.svg'
 
-const SideBar = () => {
-  const [menu] = useState([{
-    to: '/',
-    title: 'Dashboard',
-    icon: faChartBar
-  }, {
-    to: '/leads',
-    title: 'Leads',
-    icon: faDatabase
-  }, {
-    to: '/campaingns',
-    title: 'Campanhas',
-    icon: faBullseye
-  }, {
-    to: '/sales',
-    title: 'Vendas',
-    icon: faShoppingCart
-  }, {
-    to: '/clients',
-    title: 'Clientes',
-    icon: faUser
-  }, {
-    to: '/billing',
-    title: 'Cobrança',
-    icon: faReceipt
-  }, {
-    to: '/configurations',
-    title: 'Configurações',
-    icon: faCog
-  }])
+import menu from './menu'
 
+const SideBar = ({ hiddenMenu }) => {
   const location = useLocation()
 
   return (
     <Bar>
       <Head>
-        <Link
+        <LogoImageView
           to="/"
+          className={hiddenMenu && 'hidden'}
         >
           <LogoImage
             src={Logo}
             alt="Logo"
           />
-        </Link>
+        </LogoImageView>
       </Head>
 
       <BarScroll>
@@ -76,27 +43,39 @@ const SideBar = () => {
                 key={`${item.to}${index}`}
                 to={item.to}
                 activeClassName='is-active'
+                className={hiddenMenu && 'hidden'}
               >
                 <Icon
                   icon={item.icon}
                   active={`${location?.pathname === item.to}`}
                 />
-                {item.title}
+                <ItemText
+                  className={hiddenMenu && 'hidden'}
+                >
+                  {item.title}
+                </ItemText>
               </Item>
             )
           })
         }
       </BarScroll>
 
-      <Footer>
+      <Footer
+      >
         <Item
           exact
           to='/login'
+          className={hiddenMenu && 'hidden'}
         >
           <Icon icon={faSignOutAlt} />
-          Sair
+          <ItemText
+            className={hiddenMenu && 'hidden'}
+          >
+            Sair
+          </ItemText>
         </Item>
       </Footer>
+
     </Bar>
   )
 }
