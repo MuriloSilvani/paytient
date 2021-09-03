@@ -50,7 +50,7 @@ const Item = styled(NavLink)`
   cursor: pointer;
   border-radius: 8px;
   text-decoration: none;
-  color: #d2d2d2;
+  color: #dddce1;
   transition-duration: 0.3s;
   font-size: 0.94rem;
   font-weight: 600;
@@ -58,7 +58,7 @@ const Item = styled(NavLink)`
     opacity: 0.75;
   }
   &.is-active {
-    color: #5f5f5f;
+    color: #6e6b84;
   }
   padding: 0.5rem 1rem;
   &.hidden {
@@ -71,7 +71,7 @@ const Icon = styled(FontAwesomeIcon)`
   font-size: 1.1rem;
   transition-duration: 0.3s;
   text-align: center;
-  color: ${props => props.active === 'true' ? '#0f0' : '#d2d2d2'}
+  color: ${props => props.active === 'true' ? '#00d953' : '#dddce1'}
 `
 
 const ItemText = styled.div`

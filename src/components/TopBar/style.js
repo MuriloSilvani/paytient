@@ -28,7 +28,7 @@ const NotificationView = styled.div`
     position: absolute;
     bottom: 50%;
     left: 50%;
-    background: #0f0;
+    background: #00d953;
     border-radius: 50%;
     font-size: 0.75rem;
     line-height: 0.75rem;

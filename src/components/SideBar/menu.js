@@ -17,7 +17,7 @@ const menu = [{
   title: 'Leads',
   icon: faDatabase
 }, {
-  to: '/Campaigns',
+  to: '/campaigns',
   title: 'Campanhas',
   icon: faBullseye
 }, {
