@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/paytient/static/css/main.a850f5da.chunk.css",
+    "main.js": "/paytient/static/js/main.0dabfbd3.chunk.js",
+    "main.js.map": "/paytient/static/js/main.0dabfbd3.chunk.js.map",
+    "runtime-main.js": "/paytient/static/js/runtime-main.4e9f1b0e.js",
+    "runtime-main.js.map": "/paytient/static/js/runtime-main.4e9f1b0e.js.map",
+    "static/js/2.5ee397a9.chunk.js": "/paytient/static/js/2.5ee397a9.chunk.js",
+    "static/js/2.5ee397a9.chunk.js.map": "/paytient/static/js/2.5ee397a9.chunk.js.map",
+    "index.html": "/paytient/index.html",
+    "static/css/main.a850f5da.chunk.css.map": "/paytient/static/css/main.a850f5da.chunk.css.map",
+    "static/js/2.5ee397a9.chunk.js.LICENSE.txt": "/paytient/static/js/2.5ee397a9.chunk.js.LICENSE.txt",
+    "static/media/logo.d6ae993c.svg": "/paytient/static/media/logo.d6ae993c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e9f1b0e.js",
+    "static/js/2.5ee397a9.chunk.js",
+    "static/css/main.a850f5da.chunk.css",
+    "static/js/main.0dabfbd3.chunk.js"
+  ]
+}
