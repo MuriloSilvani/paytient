@@ -24,6 +24,8 @@ import {
   TextDiff
 } from './style'
 
+import Chart from './Chart'
+
 const Dashboard = () => {
   return (
     <PageBox>
@@ -60,7 +62,7 @@ const Dashboard = () => {
               icon: faUser,
               iconcolor: '#ae47e3'
             }].map(card => (
-              <Card>
+              <Card key={card.title}>
                 <TitleView>
                   <TitleIcon
                     color={card.iconcolor}
@@ -84,7 +86,7 @@ const Dashboard = () => {
                   <TextDiff>
                     <DiffIcon
                       icon={faAngleRight}
-                      positive={card.diff >= 0}
+                      positive={`${card.diff >= 0}`}
                     ></DiffIcon>
                     {card.diff < 0 ? card.diff * -1 : card.diff}
                   </TextDiff>
@@ -105,6 +107,7 @@ const Dashboard = () => {
             </TitleText>
           </TitleView>
 
+          <Chart></Chart>
         </Card>
       </ChartGrid>
 

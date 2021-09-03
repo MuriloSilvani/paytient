@@ -68,6 +68,10 @@ const TextDiff = styled.div`
   color: #a8a7b6;
 `
 
+const ChartView = styled.div`
+  height: 100%;
+`
+
 export {
   ChartGrid,
   TitleView,
@@ -77,5 +81,6 @@ export {
   TextPrefix,
   TextValue,
   DiffIcon,
-  TextDiff
+  TextDiff,
+  ChartView
 }
