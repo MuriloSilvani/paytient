@@ -26,12 +26,17 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Container>
-        <SideBar hiddenMenu={hiddenMenu} />
+        <SideBar
+          hiddenMenu={hiddenMenu}
+          swithcMenu={swithcMenu} 
+        />
 
         <Container
           direction="column"
         >
-          <TopBar swithcMenu={swithcMenu} />
+          <TopBar
+            swithcMenu={swithcMenu}
+          />
           <Frame />
         </Container>
 

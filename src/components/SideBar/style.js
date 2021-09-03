@@ -7,6 +7,33 @@ const Bar = styled.section`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  transition-duration: 0.3s;
+  @media (max-width: 580px) {
+    position: absolute;
+    height: 100vh;
+    background: #fff;
+    z-index: 2;
+    left: -100%;
+    &.hidden {
+      left: 0;
+    }
+  }
+`
+
+const Close = styled.div`
+  @media (min-width: 580px) {
+    display: none;
+  }
+  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  transition-duration: 0.3s;
+  width: 0vw;
+  opacity: 0;
+  &.hidden {
+    width: 100vw;
+    opacity: 1;
+  }
 `
 
 const Head = styled.div`
@@ -21,8 +48,10 @@ const LogoImageView = styled(NavLink)`
   position: relative;
   overflow: hidden;
   max-width: 220px;
-  &.hidden {
-    max-width: 30px;
+  @media (min-width: 580px) {
+    &.hidden {
+      max-width: 30px;
+    }
   }
 `
 
@@ -61,9 +90,11 @@ const Item = styled(NavLink)`
     color: #6e6b84;
   }
   padding: 0.5rem 1rem;
-  &.hidden {
-    gap: 0rem;
-    padding: 0.5rem .5rem;
+  @media (min-width: 580px) {
+    &.hidden {
+      gap: 0rem;
+      padding: 0.5rem .5rem;
+    }
   }
 `;
   
@@ -78,8 +109,10 @@ const ItemText = styled.div`
   transition-duration: 0.3s;
   overflow: hidden;
   max-width: 200px;
-  &.hidden {
-    max-width: 0px;
+  @media (min-width: 580px) {
+    &.hidden {
+      max-width: 0px;
+    }
   }
 `
 
@@ -89,6 +122,7 @@ const Footer = styled.div`
 
 export {
   Bar,
+  Close,
   Head,
   LogoImageView,
   LogoImage,

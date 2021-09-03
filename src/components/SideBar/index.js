@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import {
   Bar,
+  Close,
   Head,
   LogoImageView,
   LogoImage,
@@ -10,73 +11,83 @@ import {
   ItemText,
   Footer
 } from './style'
+
 import {
   faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons'
+
 import Logo from '../../assets/images/logo.svg'
 
 import menu from './menu'
 
-const SideBar = ({ hiddenMenu }) => {
+const SideBar = ({ hiddenMenu, swithcMenu }) => {
   const location = useLocation()
 
   return (
-    <Bar>
-      <Head>
-        <LogoImageView
-          to="/"
-          className={hiddenMenu && 'hidden'}
-        >
-          <LogoImage
-            src={Logo}
-            alt="Logo"
-          />
-        </LogoImageView>
-      </Head>
-
-      <BarScroll>
-        {
-          menu.map((item, index) => {
-            return (
-              <Item
-                exact
-                key={`${item.to}${index}`}
-                to={item.to}
-                activeClassName='is-active'
-                className={hiddenMenu && 'hidden'}
-              >
-                <Icon
-                  icon={item.icon}
-                  active={`${location?.pathname === item.to}`}
-                />
-                <ItemText
-                  className={hiddenMenu && 'hidden'}
-                >
-                  {item.title}
-                </ItemText>
-              </Item>
-            )
-          })
-        }
-      </BarScroll>
-
-      <Footer
+    <>
+      <Bar
+        className={hiddenMenu && 'hidden'}
       >
-        <Item
-          exact
-          to='/login'
-          className={hiddenMenu && 'hidden'}
-        >
-          <Icon icon={faSignOutAlt} />
-          <ItemText
+        <Head>
+          <LogoImageView
+            to="/"
             className={hiddenMenu && 'hidden'}
           >
-            Sair
-          </ItemText>
-        </Item>
-      </Footer>
+            <LogoImage
+              src={Logo}
+              alt="Logo"
+            />
+          </LogoImageView>
+        </Head>
 
-    </Bar>
+        <BarScroll>
+          {
+            menu.map((item, index) => {
+              return (
+                <Item
+                  exact
+                  key={`${item.to}${index}`}
+                  to={item.to}
+                  activeClassName='is-active'
+                  className={hiddenMenu && 'hidden'}
+                >
+                  <Icon
+                    icon={item.icon}
+                    active={`${location?.pathname === item.to}`}
+                  />
+                  <ItemText
+                    className={hiddenMenu && 'hidden'}
+                  >
+                    {item.title}
+                  </ItemText>
+                </Item>
+              )
+            })
+          }
+        </BarScroll>
+
+        <Footer
+        >
+          <Item
+            exact
+            to='/login'
+            className={hiddenMenu && 'hidden'}
+          >
+            <Icon icon={faSignOutAlt} />
+            <ItemText
+              className={hiddenMenu && 'hidden'}
+            >
+              Sair
+            </ItemText>
+          </Item>
+        </Footer>
+
+      </Bar>
+      <Close
+        className={hiddenMenu && 'hidden'}
+        onClick={swithcMenu}
+      />
+    </>
   )
 }
 

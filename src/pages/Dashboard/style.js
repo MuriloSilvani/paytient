@@ -54,8 +54,8 @@ const TextValue = styled.div`
 
 const DiffIcon = styled(FontAwesomeIcon)`
   color: red;
-  transform: rotate(${props => props.positive ? -90 : 90}deg);
-  color: #${props => props.positive ? '00d953' : 'd90000'};
+  transform: rotate(${props => props.positive === 'true' ? -90 : 90}deg);
+  color: #${props => props.positive === 'true' ? '00d953' : 'd90000'};
 `
 
 const TextDiff = styled.div`
@@ -69,6 +69,7 @@ const TextDiff = styled.div`
 `
 
 const ChartView = styled.div`
+  min-height: 12rem;
   height: 100%;
 `
 
